@@ -3,6 +3,16 @@ main {
     grid-template-columns: 15% 42.5% 42.5%;
     grid-template-rows: auto;
 }
+body, html, main {
+    background: url("/static/background/bg4.jpg");
+    background-size:cover;
+    color: white;
+}
+:root {
+    --border-color: #aaa;
+}
+
+
 .option-panel, .character-cards, .monster-cards, #title {
     display: inline-grid;
 }
@@ -11,7 +21,10 @@ main {
     flex-wrap:wrap;
     overflow: auto;
     height: 95vh;
-    border: 5px solid black;
+    border: 1px solid var(--border-color);
+    border-radius: 1em;
+    backdrop-filter: blur(10px);
+    margin: 0.5em;
 }
 .control-btn {
     width: 4em;
@@ -21,25 +34,29 @@ main {
     text-align: center;
 }
 .timeBox {
-    border: 1px solid black;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5em;
     margin: 1em;
     padding: 0.5em;
+    backdrop-filter: blur(10px);
 }
 .turn-panel {
     text-align: center;
-}
-.turn-panel {
-    border: 1px solid black;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
     margin: 1em;
     padding: 0.5em;
 }
+
 .timeBox > h6 {
     margin: 0;
     padding: 0;
     text-align: center;
 }
 .additional-panel {
-    border: 1px solid black;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5em;
+    backdrop-filter: blur(10px);
     margin: 1em;
     padding: 0.5em;
     display: flex;
@@ -47,7 +64,7 @@ main {
 }
 .characters-switch, .map-switch, .notes-switch {
     background: none;
-    border: 1px solid black;
+    border: 1px solid var(--border-color);
     border-radius: 0.2em;
     padding: 2.5em;
     cursor: pointer;
@@ -56,7 +73,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0.5em;
+    margin: 0.5em
 }
 .characters-switch img, .map-switch img, .notes-switch img {
     display: block;
@@ -64,11 +81,42 @@ main {
     height: 4em; /* dostosuj rozmiar według potrzeb */
 }
 .saving-panel {
-    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    border-radius: 0.5em;
     margin: 1em;
     padding: 0.5em;
 }
 .saving-panel > button {
-    width: 4em;
-    height: 4em;
+    width: 4.5em;
+    height: 4.5em;
+    text-align: center;
+    margin: 0.1em;
 }
+.additional-panel > button {
+    background-color: rgba(255,255,255,0.2);
+}
+.additional-panel > button:hover {
+    box-shadow: 0 0 0 3px #ccc inset;
+    transition: 0.2s;
+}
+
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.grid-inline {
+    display: grid;
+}
+.character-cards {
+    position: relative;
+}
+

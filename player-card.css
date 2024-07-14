@@ -1,9 +1,12 @@
 .player-card {
-    border: 1px solid black;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
-    width: 35%;
+    background-color: rgba(0,0,0,0.5);
+    width: 20em;
+    height: 25em;
     text-align: center;
     margin: 1em;
+    position: relative;
 }
 .player-card > p {
     text-align: center;
@@ -23,7 +26,7 @@
     margin: 0;
 }
 .player-card > .flex > .modifiable-panel > div::after {
-    border: 3px solid rgba(0, 0, 0, 0.6);
+    border: 3px solid var(--border-color);
     border-radius: 1em;
     white-space: pre;
     display: block;
@@ -31,10 +34,51 @@
     margin: 0.1em;
     padding: 0;
 }
-.xpPanel {
-    text-align: center;
-}
-.xpPanel > h6, .xpPanel > p {
+h6 {
     margin: 0;
     padding: 0;
+}
+.modifiable-panel > div {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+span {
+    font-weight: bold;
+}
+.delete-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 0px 4px 0px 0px;
+    cursor: pointer;
+    color: red;
+}
+.middle-panel {
+    display: flex;
+    text-align: center;
+    justify-items: center;
+    justify-content: space-around;
+}
+.coin-panel {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    justify-content: space-around;
+}
+.coin-panel > button {
+    width: 1.5em;
+    height: 1.5em;
+}
+.coin-panel > div {
+    
+}
+
+.modifiable-panel {
+    display: grid;
+    
+}
+
+.modifiable-item {
+    
 }
