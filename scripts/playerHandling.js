@@ -94,7 +94,7 @@ function addEventListeners(card, player) {
 
     
 
-
+    
     card.querySelector('.delete-button').addEventListener('click', ()=>{
         let index = players.indexOf(player);
         if (index > -1) {
@@ -103,6 +103,48 @@ function addEventListeners(card, player) {
         }
     });
     var IntervalID = null;
+
+    // xp controls
+    card.querySelector('.add-xp').addEventListener('click', () => {
+        player.xp += 10;
+        card.querySelector('.player-xp').textContent = player.xp;
+    });
+    card.querySelector('.add-xp').addEventListener('mousedown', () => {
+        IntervalID = setInterval(() => {
+            player.xp += 10;
+            card.querySelector('.player-xp').textContent = player.xp;
+        }, 100);
+    });
+    card.querySelector('.add-xp').addEventListener('mouseup', () => {
+        clearInterval(IntervalID);
+        IntervalID = null;
+    });
+    card.querySelector('.add-xp').addEventListener('mouseleave', () => {
+        clearInterval(IntervalID);
+        IntervalID = null;
+    });
+    // add level
+    card.querySelector('.add-xp-level').addEventListener('click', () => {
+        player.level += 1;
+        card.querySelector('.player-level').textContent = player.level;
+    });
+    // remove level
+    card.querySelector('.remove-xp-level').addEventListener('click', () => {
+        player.level = Math.max(1, player.level - 1);
+        card.querySelector('.player-level').textContent = player.level;
+    });
+    // reset xp
+    card.querySelector('.reset-xp').addEventListener('click', () => {
+        player.xp = 0;
+        card.querySelector('.player-xp').textContent = player.xp;
+    });
+
+
+
+
+
+
+
 
 
     card.querySelector('.add-health').addEventListener('click', () => {

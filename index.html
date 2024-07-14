@@ -16,6 +16,7 @@
     <script src="/scripts/closeWarning.js" defer></script>
     <script src="/scripts/playerHandling.js" defer></script>
     <script src="/scripts/timePlayingHandler.js" defer></script>
+    <script src="/scripts/monsterHandler.js" defer></script>
     <script src="/index.js"></script>
 </head>
 <body>
@@ -38,15 +39,7 @@
                 <button class="control-btn" id="turnButton">Next Turn</button>
             </div>
             <div class="additional-panel">
-                <button class="map-switch">
-                    <img src="/static/buttons/compass-svgrepo-com.svg" alt="Map"/>
-                </button>
-                <button class="notes-switch">
-                    <img src="/static/buttons/notes-svgrepo-com.svg" alt="Notes">
-                </button>
-                <button class="characters-switch">
-                    <img src="/static/buttons/knight-svgrepo-com.svg" alt="Characters">
-                </button>
+                
             </div>
             <div class="saving-panel">
                 <button id="save">Save</button>
@@ -58,6 +51,7 @@
             <div class="credits">
                 <div>Made by <a href="https://github.com/empezeeet">Empezeeet</a></div>
                 <div>Background from Freepik</div>
+                <div>D&D Dungeon Master App V1</div>
             </div>
         </div>
         <template id="player-card-template">
@@ -65,15 +59,24 @@
                 <link rel="stylesheet" href="/player-card.css">
                 <div class="delete-button">X</div>
                 <p class="player-name">PlayerName</p>
+                <div class="flex">
+                                <button class="add-xp-level">+1LVL</button>
+                                <button class="remove-xp-level">-1LVL</button>
+                                <button class="add-xp">+10XP</button>
+                                <button class="reset-xp">XP 0</button>
+                            </div>
                 <hr>
                 <div class="middle-panel">
                         <div>
                             <p>Level: <span class="player-level">1</span></p>
                             <h6>XP: <span class="player-xp">1</span></h6>
+                            
                         </div>
+                        <hr class="vertical"/>
                         <div>
                             <p>Height: <h6><span class="player-height">Medium</span></h6></p>
                         </div>
+                        <hr class="vertical"/>
                         <div>
                             <p>Initiative: </p>
                             <h6><span class="player-initiative">5</span></h6>
@@ -122,13 +125,63 @@
                 </div>
             </div>
         </template>
-        <div class="character-cards card-panel" id="player-cards">
-        </div>
-        <div class="monster-cards card-panel">
-            <div class="monster-card">
+        <template id="monster-card-template">
+            <div class="player-card"  data-playerID="null">
+                <link rel="stylesheet" href="/player-card.css">
+                <div class="delete-button">X</div>
+                <p class="player-name">Monster not found</p>
+                <hr>
+                <div class="middle-panel">
+                        <div>
+                            <p>Level <span class="player-level">1</span></p>                            
+                        </div>
+                        <hr class="vertical"/>
+                        <div>
+                            <p>Height <h6><span class="monster-height">Not set </span></h6></p>
+                        </div>
+                        <hr class="vertical"/>
+                        <div>
+                            <p>DC </p>
+                            <h6><span class="monster-dc">Not set</span></h6>
+                        </div>
+                        <hr class="vertical">
+                        <div>
+                            <p>Damage</p>
+                            <h6><span class="monster-damage">Not set</span></h6>
+                        </div>
+                </div>
                 
-            </div>    
+                <hr>
+                <div class="flex">
+                    <div class="modifiable-panel">
+                        <div class="grid-inline modifiable-item">
+                            <div>Health <span class="player-health">100</span></div>
+                            <button class="add-health" data-playerID="null">+</button>
+                            <button class="remove-health" data-playerID="null">-</button>
+                        </div>
+                        <div class="grid-inline modifiable-item">
+                            <div>Armor <span class="player-armor">100</span></div>
+                            <button class="add-armor" data-playerID="null">+</button>
+                            <button class="remove-armor" data-playerID="null">-</button>
+                        </div>
+                        <div class="grid-inline modifiable-item">
+                            <div>Speed <span class="player-speed">100</span></div>
+                            <button class="add-speed" data-playerID="null">+</button>
+                            <button class="remove-speed" data-playerID="null">-</button>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </template>
+        <div class="character-cards card-panel" id="player-cards">
+            
+        </div>
+        <div class="monster-cards card-panel" id="monster-cards">
+            
         </div>
     </main>
+    
 </body>
 </html>

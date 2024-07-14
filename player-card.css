@@ -1,4 +1,4 @@
-.player-card {
+.player-card, .monster-card {
     border: 1px solid var(--border-color);
     border-radius: 5px;
     background-color: rgba(0,0,0,0.5);
@@ -58,7 +58,12 @@ span {
     display: flex;
     text-align: center;
     justify-items: center;
-    justify-content: space-around;
+    justify-content:center;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.middle-panel > div {
+    
 }
 .coin-panel {
     display: grid;
