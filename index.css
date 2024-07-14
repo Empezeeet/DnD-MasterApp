@@ -4,7 +4,7 @@ main {
     grid-template-rows: auto;
 }
 body, html, main {
-    background: url("/static/background/bg4.jpg");
+    background: url("static/background/bg4.jpg");
     background-size:cover;
     color: white;
 }
