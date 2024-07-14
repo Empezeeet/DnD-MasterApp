@@ -36,14 +36,15 @@
             </div>
             <div class="turn-panel">
                 <p>Turn: <span id="turnText">1</span></p>
+                <button class="control-btn" id="previousTurn">Previous Turn</button>
                 <button class="control-btn" id="turnButton">Next Turn</button>
             </div>
             <div class="additional-panel">
                 
             </div>
             <div class="saving-panel">
-                <button id="save">Save</button>
-                <button id="load">Load</button>
+                <button id="save">No func</button>
+                <button id="load">No func</button>
                 <button id="add-monster-btn">New Monster</button> 
                 <button id="add-player-btn">New Player</button>
                
@@ -128,6 +129,7 @@
         <template id="monster-card-template">
             <div class="player-card"  data-playerID="null">
                 <link rel="stylesheet" href="player-card.css">
+                <div class="copy-button">Copy</div>
                 <div class="delete-button">X</div>
                 <p class="player-name">Monster not found</p>
                 <hr>

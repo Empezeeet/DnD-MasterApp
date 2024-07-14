@@ -65,6 +65,13 @@ function addMonsterEventListeners(card, player) {
             card.remove();
         }
     });
+    card.querySelector('.copy-button').addEventListener('click', ()=>{
+        let monster = new Monster(monsters.length+1, player.hp, player.getHeight(), player.speed, player.armor, player.damage, player.GetDC(), player.level);
+        monsters.push(monster);
+        createMonsterCard(monster);
+    });
+
+
     var IntervalID = null;
     card.querySelector('.add-health').addEventListener('click', () => {
         player.hp += 1;
