@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D DM App</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/player-card.css">
+    <style>
+        body, html {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        
+        <div id="option-panel">
+            <div class="timeBox">
+                <h6>Time Playing: <span id="stopwatch">1h 15mins 50s</span></h6>
+                <p>Day: <span id="dayText">1</span></p>
+                <p>Time: <span id="timeText">12:00</span></p>
+                <div class="time-control">
+                    <button class="control-btn">-1 hour</button>
+                    <button class="control-btn">-15 minutes</button>
+                    <button class="control-btn">+15 minutes</button>
+                    <button class="control-btn">+1 hour</button>
+                </div>
+            </div>
+            <div class="turn-panel">
+                <p>Turn: <span id="turnText">1</span> turn</p>
+                <button class="control-btn">Next Turn</button>
+            </div>
+            <div class="additional-panel">
+                <button class="map-switch">
+                    <img src="/static/buttons/compass-svgrepo-com.svg" alt="Map"/>
+                </button>
+                <button class="notes-switch">
+                    <img src="/static/buttons/notes-svgrepo-com.svg" alt="Notes">
+                </button>
+                <button class="characters-switch">
+                    <img src="/static/buttons/knight-svgrepo-com.svg" alt="Characters">
+                </button>
+            </div>
+            <div class="saving-panel">
+                <button id="save">Save</button>
+                <button id="load">Load</button>
+            </div>
+            <div class="credits">Made by <a href="https://github.com/empezeeet">Empezeeet</a></div>
+        </div>
+        <div class="character-cards card-panel">
+            <div class="player-card" data-playerID="null">
+                <p class="player-name">PlayerName</p>
+                <hr>
+                <div class="xpPanel">
+                    <p>Level: <span class="player-level">1</span></p>
+                    <h6>XP: <span class="player-xp">1</span></h6>
+                </div>
+                <hr>
+                <div class="flex">
+                    <div class="modifiable-panel">
+                        <div>
+                            <p>Health: <span class="player-health">100</span></p>
+                            <button class="add-health" data-playerID="null">+</button>
+                            <button class="remove-health" data-playerID="null">-</button>
+                        </div>
+                        <div>
+                            <p>Armor: <span class="player-armor">100</span></p>
+                            <button class="add-armor" data-playerID="null">+</button>
+                            <button class="remove-armor" data-playerID="null">-</button>
+                        </div>
+                        <div>
+                            <p>Speed: <span class="player-speed">100</span></p>
+                            <button class="add-speed" data-playerID="null">+</button>
+                            <button class="remove-speed" data-playerID="null">-</button>
+                        </div>
+                    </div>
+                    <hr class="vertical"/>
+                    <div class="static-panel">
+                        <div>Height: <span class="player-height">Medium</span></div>
+                        <div>Initiative: <span class="player-initiative">5</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card" data-playerID="null">
+                <p class="player-name">PlayerName</p>
+                <hr>
+                <div class="xpPanel">
+                    <p>Level: <span class="player-level">1</span></p>
+                    <h6>XP: <span class="player-xp">1</span></h6>
+                </div>
+                <hr>
+                <div class="flex">
+                    <div class="modifiable-panel">
+                        <div>
+                            <p>Health: <span class="player-health">100</span></p>
+                            <button class="add-health" data-playerID="null">+</button>
+                            <button class="remove-health" data-playerID="null">-</button>
+                        </div>
+                        <div>
+                            <p>Armor: <span class="player-armor">100</span></p>
+                            <button class="add-armor" data-playerID="null">+</button>
+                            <button class="remove-armor" data-playerID="null">-</button>
+                        </div>
+                        <div>
+                            <p>Speed: <span class="player-speed">100</span></p>
+                            <button class="add-speed" data-playerID="null">+</button>
+                            <button class="remove-speed" data-playerID="null">-</button>
+                        </div>
+                    </div>
+                    <hr class="vertical"/>
+                    <div class="static-panel">
+                        <div>Height: <span class="player-height">Medium</span></div>
+                        <div>Initiative: <span class="player-initiative">5</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card" data-playerID="null">
+                <p class="player-name">PlayerName</p>
+                <hr>
+                <div class="xpPanel">
+                    <p>Level: <span class="player-level">1</span></p>
+                    <h6>XP: <span class="player-xp">1</span></h6>
+                </div>
+                <hr>
+                <div class="flex">
+                    <div class="modifiable-panel">
+                        <div>
+                            <p>Health: <span class="player-health">100</span></p>
+                            <button class="add-health" data-playerID="null">+</button>
+                            <button class="remove-health" data-playerID="null">-</button>
+                        </div>
+                        <div>
+                            <p>Armor: <span class="player-armor">100</span></p>
+                            <button class="add-armor" data-playerID="null">+</button>
+                            <button class="remove-armor" data-playerID="null">-</button>
+                        </div>
+                        <div>
+                            <p>Speed: <span class="player-speed">100</span></p>
+                            <button class="add-speed" data-playerID="null">+</button>
+                            <button class="remove-speed" data-playerID="null">-</button>
+                        </div>
+                    </div>
+                    <hr class="vertical"/>
+                    <div class="static-panel">
+                        <div>Height: <span class="player-height">Medium</span></div>
+                        <div>Initiative: <span class="player-initiative">5</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card" data-playerID="null">
+                <p class="player-name">PlayerName</p>
+                <hr>
+                <div class="xpPanel">
+                    <p>Level: <span class="player-level">1</span></p>
+                    <h6>XP: <span class="player-xp">1</span></h6>
+                </div>
+                <hr>
+                <div class="flex">
+                    <div class="modifiable-panel">
+                        <div>
+                            <p>Health: <span class="player-health">100</span></p>
+                            <button class="add-health" data-playerID="null">+</button>
+                            <button class="remove-health" data-playerID="null">-</button>
+                        </div>
+                        <div>
+                            <p>Armor: <span class="player-armor">100</span></p>
+                            <button class="add-armor" data-playerID="null">+</button>
+                            <button class="remove-armor" data-playerID="null">-</button>
+                        </div>
+                        <div>
+                            <p>Speed: <span class="player-speed">100</span></p>
+                            <button class="add-speed" data-playerID="null">+</button>
+                            <button class="remove-speed" data-playerID="null">-</button>
+                        </div>
+                    </div>
+                    <hr class="vertical"/>
+                    <div class="static-panel">
+                        <div>Height: <span class="player-height">Medium</span></div>
+                        <div>Initiative: <span class="player-initiative">5</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card" data-playerID="null">
+                <p class="player-name">PlayerName</p>
+                <hr>
+                <div class="xpPanel">
+                    <p>Level: <span class="player-level">1</span></p>
+                    <h6>XP: <span class="player-xp">1</span></h6>
+                </div>
+                <hr>
+                <div class="flex">
+                    <div class="modifiable-panel">
+                        <div>
+                            <p>Health: <span class="player-health">100</span></p>
+                            <button class="add-health" data-playerID="null">+</button>
+                            <button class="remove-health" data-playerID="null">-</button>
+                        </div>
+                        <div>
+                            <p>Armor: <span class="player-armor">100</span></p>
+                            <button class="add-armor" data-playerID="null">+</button>
+                            <button class="remove-armor" data-playerID="null">-</button>
+                        </div>
+                        <div>
+                            <p>Speed: <span class="player-speed">100</span></p>
+                            <button class="add-speed" data-playerID="null">+</button>
+                            <button class="remove-speed" data-playerID="null">-</button>
+                        </div>
+                    </div>
+                    <hr class="vertical"/>
+                    <div class="static-panel">
+                        <div>Height: <span class="player-height">Medium</span></div>
+                        <div>Initiative: <span class="player-initiative">5</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card" data-playerID="null">
+                <p class="player-name">PlayerName</p>
+                <hr>
+                <div class="xpPanel">
+                    <p>Level: <span class="player-level">1</span></p>
+                    <h6>XP: <span class="player-xp">1</span></h6>
+                </div>
+                <hr>
+                <div class="flex">
+                    <div class="modifiable-panel">
+                        <div>
+                            <p>Health: <span class="player-health">100</span></p>
+                            <button class="add-health" data-playerID="null">+</button>
+                            <button class="remove-health" data-playerID="null">-</button>
+                        </div>
+                        <div>
+                            <p>Armor: <span class="player-armor">100</span></p>
+                            <button class="add-armor" data-playerID="null">+</button>
+                            <button class="remove-armor" data-playerID="null">-</button>
+                        </div>
+                        <div>
+                            <p>Speed: <span class="player-speed">100</span></p>
+                            <button class="add-speed" data-playerID="null">+</button>
+                            <button class="remove-speed" data-playerID="null">-</button>
+                        </div>
+                    </div>
+                    <hr class="vertical"/>
+                    <div class="static-panel">
+                        <div>Height: <span class="player-height">Medium</span></div>
+                        <div>Initiative: <span class="player-initiative">5</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="monster-cards card-panel">
+            <div class="player-card" data-playerID="null">
+                <p class="player-name">PlayerName</p>
+                <hr>
+                <div class="xpPanel">
+                    <p>Level: <span class="player-level">1</span></p>
+                    <h6>XP: <span class="player-xp">1</span></h6>
+                </div>
+                <hr>
+                <div class="flex">
+                    <div class="modifiable-panel">
+                        <div>
+                            <p>Health: <span class="player-health">100</span></p>
+                            <button class="add-health" data-playerID="null">+</button>
+                            <button class="remove-health" data-playerID="null">-</button>
+                        </div>
+                        <div>
+                            <p>Armor: <span class="player-armor">100</span></p>
+                            <button class="add-armor" data-playerID="null">+</button>
+                            <button class="remove-armor" data-playerID="null">-</button>
+                        </div>
+                        <div>
+                            <p>Speed: <span class="player-speed">100</span></p>
+                            <button class="add-speed" data-playerID="null">+</button>
+                            <button class="remove-speed" data-playerID="null">-</button>
+                        </div>
+                    </div>
+                    <hr class="vertical"/>
+                    <div class="static-panel">
+                        <div>Height: <span class="player-height">Medium</span></div>
+                        <div>Initiative: <span class="player-initiative">5</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

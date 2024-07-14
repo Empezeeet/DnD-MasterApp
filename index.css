@@ -1,0 +1,74 @@
+main {
+    display: grid;
+    grid-template-columns: 15% 42.5% 42.5%;
+    grid-template-rows: auto;
+}
+.option-panel, .character-cards, .monster-cards, #title {
+    display: inline-grid;
+}
+.card-panel {
+    display: flex;
+    flex-wrap:wrap;
+    overflow: auto;
+    height: 95vh;
+    border: 5px solid black;
+}
+.control-btn {
+    width: 4em;
+    height: 4em;
+}
+.timeBox > p {
+    text-align: center;
+}
+.timeBox {
+    border: 1px solid black;
+    margin: 1em;
+    padding: 0.5em;
+}
+.turn-panel {
+    text-align: center;
+}
+.turn-panel {
+    border: 1px solid black;
+    margin: 1em;
+    padding: 0.5em;
+}
+.timeBox > h6 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.additional-panel {
+    border: 1px solid black;
+    margin: 1em;
+    padding: 0.5em;
+    display: flex;
+    justify-content: center;
+}
+.characters-switch, .map-switch, .notes-switch {
+    background: none;
+    border: 1px solid black;
+    border-radius: 0.2em;
+    padding: 2.5em;
+    cursor: pointer;
+    width: 4em;
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em;
+}
+.characters-switch img, .map-switch img, .notes-switch img {
+    display: block;
+    width: 100px; /* dostosuj rozmiar według potrzeb */
+    height: 4em; /* dostosuj rozmiar według potrzeb */
+}
+.saving-panel {
+    border: 1px solid black;
+    margin: 1em;
+    padding: 0.5em;
+}
+.saving-panel > button {
+    width: 4em;
+    height: 4em;
+}
