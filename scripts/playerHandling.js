@@ -88,7 +88,21 @@ function createPlayerCard(player) {
     // Append the card to the container
     document.getElementById('player-cards').appendChild(card);
 }
+function HandleLoadPlayers() {
+    let loadedGame = JSON.parse(localStorage.getItem('save'));
+    let players_loaded = []
+    for (let i = 0; i < loadedGame.players.length; i++) {
+        players_loaded.push(Object.assign(new Player(), loadedGame.players[i]));
+    }
+    for (let i = 0; i < players_loaded.length; i++) {
+        players.push(players_loaded[i]);
+        createPlayerCard(players_loaded[i]);
+    }
 
+}
+function ClearPlayers() {
+    players = [];
+}
 // Function to add event listeners to buttons
 function addEventListeners(card, player) {
 

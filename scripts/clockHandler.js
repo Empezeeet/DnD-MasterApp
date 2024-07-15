@@ -13,6 +13,15 @@ function updateTimeText() {
 function updateDayText() {
     dayText.textContent = day;
 }
+function ClockHandleLoad() {
+    let loadedGame = JSON.parse(localStorage.getItem('save'));
+    hours = loadedGame.gameDayTimeHour;
+    minutes = loadedGame.gameDayTimeMinute;
+    day = loadedGame.gameDay;
+    updateTimeText();
+    updateDayText();
+
+}
 
 
 document.getElementById("minus-hour").onclick = () => {

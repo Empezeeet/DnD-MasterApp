@@ -11,6 +11,11 @@ document.getElementById("previousTurn").onclick = () => {
     }
     turnText.textContent = turn;
 }
+function HandleLoadTurns() {
+    let loadedGame = JSON.parse(localStorage.getItem('save'));
+    turn = loadedGame.gameTurn;
+    turnText.textContent = turn;
+}
 
 
 

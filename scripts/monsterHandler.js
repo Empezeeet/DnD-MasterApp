@@ -23,7 +23,9 @@ class Monster {
 }
 
 var monsters = [];
-
+function ClearMonsters() {
+    monsters.length = 0;
+}
 
 function addMonster() {
     let id = monsters.length+1;
@@ -38,6 +40,21 @@ function addMonster() {
     monsters.push(monster);
     console.log("Monster added!");
     createMonsterCard(monster);
+}
+function HandleLoadMonsters() {
+    let loadedGame = JSON.parse(localStorage.getItem('save'));
+    console.log(loadedGame);
+    console.log(loadedGame.monsters);
+    var monsters_loaded = [];
+    for (let i = 0; i<loadedGame.monsters.length; i++) {
+        monsters_loaded.push(Object.assign(new Monster(), loadedGame.monsters[i]));
+    }
+
+    for (let i = 0; i < monsters_loaded.length; i++) {
+        monsters.push(monsters_loaded[i]);
+        createMonsterCard(monsters_loaded[i]);
+        
+    }
 }
 document.getElementById("add-monster-btn").addEventListener("click", addMonster);
 function createMonsterCard(monster) {
@@ -59,10 +76,13 @@ function createMonsterCard(monster) {
 }
 function addMonsterEventListeners(card, player) {
     card.querySelector('.delete-button').addEventListener('click', ()=>{
+        
         let index = monsters.indexOf(player);
+        console.log(`Index: ${index}`);
         if (index > -1) {
             monsters.splice(index, 1);
             card.remove();
+            console.log("Monster deleted!");
         }
     });
     card.querySelector('.copy-button').addEventListener('click', ()=>{
