@@ -31,7 +31,11 @@ class Player {
     }
 }
 var players = [];
-
+const level_xp = [
+    0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000,
+    85000, 100000, 120000, 140000, 165000, 195000, 225000, 265000,
+    305000, 355000
+]
 function addNewPlayer() {
 
     let name = new Text(prompt("Enter name of new Character"))
@@ -69,18 +73,18 @@ function createPlayerCard(player) {
     // Set player data
     card.querySelector('.player-name').textContent = player.name;
     card.querySelector('.player-level').textContent = player.level;
-    card.querySelector('.player-xp').textContent = player.xp;
+    card.querySelector('.player-xp').textContent = `${player.xp} / ${level_xp[player.level]} XP`;
     card.querySelector('.player-height').textContent = player.getHeight();
     card.querySelector('.player-initiative').textContent = player.getInitiative();
     card.querySelector('.player-health').textContent = player.health;
     card.querySelector('.player-armor').textContent = player.armor;
     card.querySelector('.player-speed').textContent = player.speed;
 
-    card.querySelector('.coin-panel .copper-count').textContent = 0;
-    card.querySelector('.coin-panel .silver-count').textContent = 0;
-    card.querySelector('.coin-panel .electrum-count').textContent = 0;
-    card.querySelector('.coin-panel .gold-count').textContent = 0;
-    card.querySelector('.coin-panel .platinum-count').textContent = 0;
+    card.querySelector('.coin-panel .copper-count').textContent = player.copper_coins;
+    card.querySelector('.coin-panel .silver-count').textContent = player.silver_coins;
+    card.querySelector('.coin-panel .electrum-count').textContent = player.electrum_coins;
+    card.querySelector('.coin-panel .gold-count').textContent = player.gold_coins;
+    card.querySelector('.coin-panel .platinum-count').textContent = player.platinum_coins;
 
     // Add event listeners for buttons
     addEventListeners(card, player);
@@ -100,6 +104,7 @@ function HandleLoadPlayers() {
     }
 
 }
+
 function ClearPlayers() {
     players = [];
 }
