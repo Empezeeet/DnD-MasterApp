@@ -16,9 +16,7 @@ body, html {
 .option-panel, .character-cards, .monster-cards, #title {
     display: inline-grid;
 }
-.option-panel {
-    
-}
+
 .card-panel {
     display: flex;
     flex-wrap: wrap;
