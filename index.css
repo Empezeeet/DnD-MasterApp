@@ -136,7 +136,6 @@ body, html {
 a:any-link {
     
     background: linear-gradient(45deg, #ff10bf, #ababff);
-    animation: link_animation 5s 0 infinite normal forwards;
     background-clip: text;
     color: none;
     background-size: 100%;
