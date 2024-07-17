@@ -71,7 +71,7 @@
                                 <button class="remove-xp-level">-1LVL</button>
                                 <button class="add-xp">+10XP</button>
                                 <button class="reset-xp">XP 0</button>
-                            </div>
+                </div>
                 <hr>
                 <div class="middle-panel">
                         <div>
@@ -206,7 +206,7 @@
         <button id="mscreen-close">Close</button>
         <h1 style="text-align: center;">Dungeon Master's Screen</h1>
         <div class="mscreen-tables">
-            <table>
+            <table class="small-text">
                 <tbody>
                 <tr>
                 <td><b>Class</b></td>
@@ -229,11 +229,11 @@
                 <td>Wisdom</td>
                 </tr>
                 <tr>
-                <td>Fighter (Eldritch Knight)</td>
+                <td>Fighter</td>
                 <td>Intelligence</td>
                 </tr>
                 <tr>
-                <td>Monk (Way of the four elements)</td>
+                <td>Monk</td>
                 <td>Wisdom</td>
                 </tr>
                 <tr>
@@ -241,11 +241,11 @@
                 <td>Charisma</td>
                 </tr>
                 <tr>
-                <td>Ranger&nbsp;</td>
+                <td>Ranger</td>
                 <td>Wisdom</td>
                 </tr>
                 <tr>
-                <td>Rogue (Arcane Trickster)</td>
+                <td>Rogue</td>
                 <td>Intelligence</td>
                 </tr>
                 <tr>
@@ -262,7 +262,7 @@
                 </tr>
                 </tbody>
                 </table>
-            <table>
+            <table class="small-text">
                 <tbody>
                 <tr>
                 <td><strong>Score</strong></td>
@@ -334,6 +334,199 @@
                 </tr>
                 </tbody>
                 </table>
+            <table class="small-text">
+                <thead>
+                <tr>
+                <th>Task Difficulty</th>
+                <th>DC</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>Very easy</td>
+                <td>5</td>
+                </tr>
+                <tr>
+                <td>Easy</td>
+                <td>10</td>
+                </tr>
+                <tr>
+                <td>Medium</td>
+                <td>15</td>
+                </tr>
+                <tr>
+                <td>Hard</td>
+                <td>20</td>
+                </tr>
+                <tr>
+                <td>Very hard</td>
+                <td>25</td>
+                </tr>
+                <tr>
+                <td>Impossible</td>
+                <td>30</td>
+                </tr>
+                </tbody>
+                </table>
+            <table class="small-text">
+                <thead>
+                    <tr>
+                    <th colspan="2">Skills</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>Strength</td>
+                    <td>Athletics</td>
+                    </tr>
+                    <tr>
+                    <td>Dexterity</td>
+                    <td>Acrobatics, Sleight of Hand, Stealth</td>
+                    </tr>
+                    <tr>
+                    <td>Constitution</td>
+                    <td>-</td>
+                    </tr>
+                    <tr>
+                    <td>Intelligence</td>
+                    <td>Arcana, History, Investigation,<br>Nature, Religion</td>
+                    </tr>
+                    <tr>
+                    <td>Wisdom</td>
+                    <td>Animal Handling, Insight,<br>Medicine, Perception, Survival</td>
+                    </tr>
+                    <tr>
+                    <td>Charisma</td>
+                    <td>Deception, Intimidation,<br>Performance, Persuasion</td>
+                    </tr>
+                </tbody>
+                </table>      
+        </div>
+        <br>
+        <div class="mscreen-tables">
+            <table class="small-text">
+                <thead>
+                  <tr>
+                    <th colspan="6">Exchange Rates</th>
+                  </tr>
+                  <tr>
+                    <th>Coin</th>
+                    <th>cp</th>
+                    <th>sp</th>
+                    <th>ep</th>
+                    <th>gp</th>
+                    <th>pp</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Copper (cp)</td>
+                    <td>1</td>
+                    <td>1/10</td>
+                    <td>1/50</td>
+                    <td>1/100</td>
+                    <td>1/1000</td>
+                  </tr>
+                  <tr>
+                    <td>Silver (sp)</td>
+                    <td>10</td>
+                    <td>1</td>
+                    <td>1/5</td>
+                    <td>1/10</td>
+                    <td>1/100</td>
+                  </tr>
+                  <tr>
+                    <td>Electrum (ep)</td>
+                    <td>50</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>1/2</td>
+                    <td>1/20</td>
+                  </tr>
+                  <tr>
+                    <td>Gold (gp)</td>
+                    <td>100</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1/10</td>
+                  </tr>
+                  <tr>
+                    <td>Platinum (pp)</td>
+                    <td>1,000</td>
+                    <td>100</td>
+                    <td>20</td>
+                    <td>10</td>
+                    <td>1</td>
+                  </tr>
+                </tbody>
+              </table>
+            <table class="small-text">
+            <thead>
+                <tr>
+                <th colspan="2">Conditions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>Blinded</td>
+                <td>Sight checks fail. Disadvantage on attacks. Attacks at you have advantage.</td>
+                </tr>
+                <tr>
+                <td>Charmed</td>
+                <td>Cannot harm charmer. Charmer has advantage on social ability checks.</td>
+                </tr>
+                <tr>
+                <td>Deafened</td>
+                <td>Fail checks involving hearing.</td>
+                </tr>
+                <tr>
+                <td>Frightened</td>
+                <td>Disadvantage on ability checks and attacks while fear source is in line of sight, <br>can't move closer to fear source.</td>
+                </tr>
+                <tr>
+                <td>Grappled</td>
+                <td>Speed becomes 0.</td>
+                </tr>
+                <tr>
+                <td>Incapacitated</td>
+                <td>No actions or reactions.</td>
+                </tr>
+                <tr>
+                <td>Invisible</td>
+                <td>Advantage on your attacks. Attacks against you have disadvantage.</td>
+                </tr>
+                <tr>
+                <td>Paralyzed</td>
+                <td>Incapacitated, can't move or speak. Fail STR and DEX saves.<br> Attacks at you have advantage and critical if within 5 feet.</td>
+                </tr>
+                <tr>
+                <td>Petrified</td>
+                <td>Incapacitated, can't move or speak, unaware. Fail STR and DEX saves. <br>Attacks against you have advantage. <br>Resist all damage. Immune to poison and disease.</td>
+                </tr>
+                <tr>
+                <td>Poisoned</td>
+                <td>Disadvantage on attacks and ability checks.</td>
+                </tr>
+                <tr>
+                <td>Prone</td>
+                <td>May crawl or stand. Disadvantage on your attack rolls. <br>Attacks against you within 5 feet have an advantage.</td>
+                </tr>
+                <tr>
+                <td>Restrained</td>
+                <td>Speed is 0. Attacks and DEX saves have disadvantage. Attacks against you have an advantage.</td>
+                </tr>
+                <tr>
+                <td>Stunned</td>
+                <td>No actions or moves. Fail STR and DEX saves. Attacks at you have advantage.</td>
+                </tr>
+                <tr>
+                <td>Unconscious</td>
+                <td>Incapacitated, can't move or speak, unaware. <br>Drop anything held. Fall prone. Fail STR and DEX saves. <br>Attacks against you have advantage and critical if within 5 feet.</td>
+                </tr>
+            </tbody>
+            </table>
+              
         </div>
         
     

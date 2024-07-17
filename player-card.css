@@ -60,9 +60,6 @@ span {
     margin-right: 0.5em;
     
 }
-.middle-panel > div {
-    
-}
 .coin-panel {
     display: grid;
     grid-template-columns: 33% 33% 33%;
@@ -77,7 +74,6 @@ span {
 
 .modifiable-panel {
     display: grid;
-    
 }
 
 .copy-button {
