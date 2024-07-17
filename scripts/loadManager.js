@@ -17,6 +17,8 @@ function load() {
     let gameTurn = loadedGame.gameTurn;
     let gameDayTimeHour = loadedGame.gameDayTimeHour;
     let gameDayTimeMinute = loadedGame.gameDayTimeMinute;
+    document.getElementById("notebook-area").value = loadedGame.notes_string;
+    notebookContent = loadedGame.notes_string;
     console.log(players.lenght);
     ClearCards();
     ClearMonsters();

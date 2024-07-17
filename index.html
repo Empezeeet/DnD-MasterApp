@@ -19,6 +19,8 @@
     <script src="scripts/monsterHandler.js" defer></script>
     <script src="scripts/saveManager.js" defer></script>
     <script src="scripts/loadManager.js" defer></script>
+    <script src="scripts/notebook.js" defer></script>
+    <script src="scripts/masterScreenHandler.js" defer></script>
     <script src="index.js"></script>
 </head>
 <body>
@@ -30,10 +32,10 @@
                 <p>Day: <span id="dayText">1</span></p>
                 <p>Time: <span id="timeText">12:00</span></p>
                 <div class="time-control">
-                    <button class="control-btn" id="minus-hour">-1 hour</button>
-                    <button class="control-btn" id="minus-15minutes">-15 minutes</button>
-                    <button class="control-btn" id="plus-15minutes">+15 minutes</button>
-                    <button class="control-btn" id="plus-hour">+1 hour</button>
+                    <button class="control-btn" id="minus-hour">-1h</button>
+                    <button class="control-btn" id="minus-15minutes">-15min</button>
+                    <button class="control-btn" id="plus-15minutes">+15min</button>
+                    <button class="control-btn" id="plus-hour">+1h</button>
                 </div>
             </div>
             <div class="turn-panel">
@@ -42,19 +44,21 @@
                 <button class="control-btn" id="turnButton">Next Turn</button>
             </div>
             <div class="additional-panel">
-                
+                <button id="toggle-dm-screen" class="control-btn">DM Help</button>
+                <button id="toggle-notes" class="control-btn">Notes</button>
+            
             </div>
             <div class="saving-panel">
-                <button id="save">Save</button>
-                <button id="load">Load</button>
-                <button id="add-monster-btn">New Monster</button> 
-                <button id="add-player-btn">New Player</button>
+                <button id="save" class="control-btn">Save</button>
+                <button id="load" class="control-btn">Load</button>
+                <button id="add-monster-btn" class="control-btn">+ Monster</button> 
+                <button id="add-player-btn" class="control-btn">+ Player</button>
                
             </div>
             <div class="credits">
                 <div>Made by <a href="https://github.com/empezeeet">Empezeeet</a></div>
                 <div>Background from Freepik</div>
-                <div>D&D Dungeon Master App V1.4</div>
+                <div>D&D Dungeon Master App V1.5</div>
             </div>
         </div>
         <template id="player-card-template">
@@ -179,13 +183,163 @@
                 </div>
             </div>
         </template>
+
+
+
         <div class="character-cards card-panel" id="player-cards">
             
         </div>
         <div class="monster-cards card-panel" id="monster-cards">
             
         </div>
+
+        
+
+
     </main>
+    <div class="notebook" id="notebook">
+        <textarea id="notebook-area">
+
+        </textarea>
+    </div>
+    <div class="master-screen" id="master-screen">
+        <button id="mscreen-close">Close</button>
+        <h1 style="text-align: center;">Dungeon Master's Screen</h1>
+        <div class="mscreen-tables">
+            <table>
+                <tbody>
+                <tr>
+                <td><b>Class</b></td>
+                <td><b>Spellcasting ability</b></td>
+                </tr>
+                <tr>
+                <td>Artificer</td>
+                <td>Intelligence</td>
+                </tr>
+                <tr>
+                <td>Bard</td>
+                <td>Charisma</td>
+                </tr>
+                <tr>
+                <td>Cleric</td>
+                <td>Wisdom</td>
+                </tr>
+                <tr>
+                <td>Druid</td>
+                <td>Wisdom</td>
+                </tr>
+                <tr>
+                <td>Fighter (Eldritch Knight)</td>
+                <td>Intelligence</td>
+                </tr>
+                <tr>
+                <td>Monk (Way of the four elements)</td>
+                <td>Wisdom</td>
+                </tr>
+                <tr>
+                <td>Paladin</td>
+                <td>Charisma</td>
+                </tr>
+                <tr>
+                <td>Ranger&nbsp;</td>
+                <td>Wisdom</td>
+                </tr>
+                <tr>
+                <td>Rogue (Arcane Trickster)</td>
+                <td>Intelligence</td>
+                </tr>
+                <tr>
+                <td>Sorcerer</td>
+                <td>Charisma</td>
+                </tr>
+                <tr>
+                <td>Wizard</td>
+                <td>Intelligence</td>
+                </tr>
+                <tr>
+                <td>Warlock</td>
+                <td>Charisma</td>
+                </tr>
+                </tbody>
+                </table>
+            <table>
+                <tbody>
+                <tr>
+                <td><strong>Score</strong></td>
+                <td><strong>Modifier</strong></td>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>-5</td>
+                </tr>
+                <tr>
+                <td>2-3</td>
+                <td>-4</td>
+                </tr>
+                <tr>
+                <td>4-5</td>
+                <td>-3</td>
+                </tr>
+                <tr>
+                <td>6-7</td>
+                <td>-2</td>
+                </tr>
+                <tr>
+                <td>8-9</td>
+                <td>-1</td>
+                </tr>
+                <tr>
+                <td>10-11</td>
+                <td>0</td>
+                </tr>
+                <tr>
+                <td>12-13</td>
+                <td>+1</td>
+                </tr>
+                <tr>
+                <td>14-15</td>
+                <td>+2</td>
+                </tr>
+                <tr>
+                <td>16-17</td>
+                <td>+3</td>
+                </tr>
+                <tr>
+                <td>18-19</td>
+                <td>+4</td>
+                </tr>
+                <tr>
+                <td>20-21</td>
+                <td>+5</td>
+                </tr>
+                <tr>
+                <td>22-23</td>
+                <td>+6</td>
+                </tr>
+                <tr>
+                <td>24-25</td>
+                <td>+7</td>
+                </tr>
+                <tr>
+                <td>26-27</td>
+                <td>+8</td>
+                </tr>
+                <tr>
+                <td>28-29</td>
+                <td>+9</td>
+                </tr>
+                <tr>
+                <td>30</td>
+                <td>+10</td>
+                </tr>
+                </tbody>
+                </table>
+        </div>
+        
     
+        
+
+
+    </div>
 </body>
 </html>

@@ -7,9 +7,10 @@ class Game {
 
     players = [];
     monsters = [];
+    notes_string = "";
 
     // constructor for the game. requires all properties to be passed in
-    constructor(timePlayingSeconds, gameDay, gameTurn, gameDayTimeHour, gameDayTimeMinute, players, monsters) {
+    constructor(timePlayingSeconds, gameDay, gameTurn, gameDayTimeHour, gameDayTimeMinute, players, monsters, notes) {
         this.timePlayingSeconds = timePlayingSeconds;
  
         this.gameDay = gameDay;
@@ -18,6 +19,7 @@ class Game {
         this.gameDayTimeMinute = gameDayTimeMinute;
         this.players = players;
         this.monsters = monsters;
+        this.notes_string = notes;
     }
     stringify() {
         return JSON.stringify(this);
@@ -36,8 +38,9 @@ function save() {
     let gameDay = day;
     let gameDayTime = hours;
     let gameDayMinutes = minutes;
+    let notes_string = notebookContent;
 
-    let game = new Game(gamePlayingTime, gameDay, turnCount, gameDayTime, gameDayMinutes, playersArray, monstersArray);
+    let game = new Game(gamePlayingTime, gameDay, turnCount, gameDayTime, gameDayMinutes, playersArray, monstersArray, notes_string);
     
     localStorage.setItem('save', JSON.stringify(game));
     alert("Game saved!");

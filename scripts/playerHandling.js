@@ -29,6 +29,7 @@ class Player {
     getHeight() {
         return this.#height;
     }
+    
 }
 var players = [];
 const level_xp = [
@@ -126,12 +127,12 @@ function addEventListeners(card, player) {
     // xp controls
     card.querySelector('.add-xp').addEventListener('click', () => {
         player.xp += 10;
-        card.querySelector('.player-xp').textContent = player.xp;
+        card.querySelector('.player-xp').textContent = `${player.xp} / ${level_xp[player.level]} XP`;
     });
     card.querySelector('.add-xp').addEventListener('mousedown', () => {
         IntervalID = setInterval(() => {
             player.xp += 10;
-            card.querySelector('.player-xp').textContent = player.xp;
+            card.querySelector('.player-xp').textContent =`${player.xp} / ${level_xp[player.level]} XP`;
         }, 100);
     });
     card.querySelector('.add-xp').addEventListener('mouseup', () => {
@@ -146,16 +147,19 @@ function addEventListeners(card, player) {
     card.querySelector('.add-xp-level').addEventListener('click', () => {
         player.level += 1;
         card.querySelector('.player-level').textContent = player.level;
+        card.querySelector('.player-xp').textContent =`${player.xp} / ${level_xp[player.level]} XP`;
     });
     // remove level
     card.querySelector('.remove-xp-level').addEventListener('click', () => {
         player.level = Math.max(1, player.level - 1);
         card.querySelector('.player-level').textContent = player.level;
+        card.querySelector('.player-xp').textContent =`${player.xp} / ${level_xp[player.level]} XP`;
+
     });
     // reset xp
     card.querySelector('.reset-xp').addEventListener('click', () => {
         player.xp = 0;
-        card.querySelector('.player-xp').textContent = player.xp;
+        card.querySelector('.player-xp').textContent = `${player.xp} / ${level_xp[player.level]} XP`;
     });
 
 
