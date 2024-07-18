@@ -3,9 +3,8 @@
     border-radius: 5px;
     background-color: rgba(0,0,0,0.5);
     width: 15em;
-    height: 25em;
+    height: max-content;
     text-align: center;
-    margin: 0.5em;
     position: relative;
 }
 .player-card > p {
@@ -13,7 +12,6 @@
 }
 .flex {
     display: flex;
-    justify-content: space-around;
 }
 .flex > .vertical {
     min-height: 100%;
@@ -22,23 +20,18 @@
     margin-right: 1em;
 }
 
-.player-card > .flex > .modifiable-panel > div::after {
-    border: 3px solid var(--border-color);
-    border-radius: 1em;
-    white-space: pre;
-    display: block;
-    content: "";
-    margin: 0.1em;
-    padding: 0;
-}
+
 h6 {
     margin: 0;
     padding: 0;
 }
-.modifiable-panel > div {
-    margin-left: 1em;
-    margin-right: 0em;
+
+.modifiable-item {
+    margin: 0.25em;
+    width: 5em;
 }
+
+
 span {
     font-weight: bold;
 }
@@ -46,8 +39,7 @@ span {
     position: absolute;
     top: 0;
     right: 0;
-    border: 1px solid var(--border-color);
-    border-radius: 0px 4px 0px 0px;
+    padding: 0.25em;
     cursor: pointer;
     color: red;
 }
@@ -60,17 +52,25 @@ span {
     margin-right: 0.5em;
     
 }
-.coin-panel {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 20% 20% 20% 20% 20%;
-    justify-content: space-evenly;
-}
-.coin-panel > button {
-    width: max-content;
-    height: max-content;
+
+.coin-panel > .modifiable-item > button {
+    width: min-content;
+    height: min-content;
+    font-size: xx-small;
 }
 
+
+.coin-panel > hr {
+    width: 100%;
+
+}
+
+.coin-panel > .modifiable-item {
+    height: 2em;
+    font-size: small;
+    display: flex;
+    
+}
 
 .modifiable-panel {
     display: grid;
@@ -80,8 +80,9 @@ span {
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: 4px 0px 0px 0px;
-    padding: 0.5em;
-    cursor: pointer;
-    color: green;
+    padding: 0.2em;
+    border: 1px solid var(--border-color);
+    border-left: none;
+    border-top: none;
+    
 }
