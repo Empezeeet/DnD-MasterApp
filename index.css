@@ -8,6 +8,7 @@ body, html {
     background-size:cover;
     color: white;
 }
+
 :root {
     --border-color: #aaa;
 }
@@ -153,6 +154,7 @@ a:any-link {
     -webkit-backdrop-filter: blur(10px);
     top: 0;
     left: 0;
+    overflow: hidden;
     
 }
 #mscreen-close {
