@@ -1,23 +1,24 @@
 
 
 class Monster {
-    #height;
-    #difficulty_class;
     constructor(id, hp, height, speed, damage, dc, lvl) {
         this.id = id;
         this.hp = hp;
-        this.#height = height;
+        this.height = height;
         this.speed = speed;
         this.damage = damage;
-        this.#difficulty_class = dc;
+        this.difficulty_class = dc;
         this.level = lvl;
 
     }
-    GetDC() {
-        return this.#difficulty_class;
-    }
     getHeight() {
-        return this.#height;
+        return this.height;
+    }
+    GetDC() {
+        return this.difficulty_class;
+    }
+    getCopy() {
+        return new Monster(monsters.length+1, this.hp, this.height, this.speed, this.damage, this.difficulty_class, this.level);
     }
 }
 
@@ -62,11 +63,11 @@ function createMonsterCard(monster) {
 
     card.querySelector(".player-name").textContent = "Monster " + monster.id;
     card.querySelector('.player-level').textContent = monster.level;
-    card.querySelector('.monster-height').textContent = monster.getHeight();
+    card.querySelector('.monster-height').textContent = monster.height;
     card.querySelector('.player-health').textContent = monster.hp;
     card.querySelector('.player-speed').textContent = monster.speed;
     card.querySelector('.monster-damage').textContent = monster.damage;
-    card.querySelector('.monster-dc').textContent = monster.GetDC();
+    card.querySelector('.monster-dc').textContent = monster.difficulty_class;
 
     document.getElementById("monster-cards").appendChild(card);
     addMonsterEventListeners(card, monster);
@@ -83,7 +84,7 @@ function addMonsterEventListeners(card, player) {
         }
     });
     card.querySelector('.copy-button').addEventListener('click', ()=>{
-        let monster = new Monster(monsters.length+1, player.hp, player.getHeight(), player.speed, player.armor, player.damage, player.GetDC(), player.level);
+        let monster = player.getCopy();
         monsters.push(monster);
         createMonsterCard(monster);
     });

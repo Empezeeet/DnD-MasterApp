@@ -1,8 +1,8 @@
 class Player {
 
-   
+   effects=[];
 
-    constructor(name, health, armor, speed, height, initiative) {
+    constructor(name, health, armor, speed, height, initiative, effects=[]) {
         this.name = name // works as ID;
         this.health = health;
         this.armor = armor;
@@ -19,7 +19,7 @@ class Player {
         
         this.initiative = initiative;
         this.height = height;
-        
+        this.effects = effects;
     }
 
 
