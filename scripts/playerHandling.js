@@ -1,9 +1,8 @@
 class Player {
 
-    #height;
-    #initiative;
+   effects=[];
 
-    constructor(name, health, armor, speed, height, initiative) {
+    constructor(name, health, armor, speed, height, initiative, effects=[]) {
         this.name = name // works as ID;
         this.health = health;
         this.armor = armor;
@@ -18,16 +17,22 @@ class Player {
         this.platinum_coins = 0;
         
         
-        this.#initiative = initiative;
-        this.#height = height;
+        this.initiative = initiative;
+        this.height = height;
+        this.effects = effects;
     }
 
 
-    getInitiative() {
-        return this.#initiative;
+    addXP(amount) {
+        this.xp += amount;
+        while (this.xp >= level_xp[this.level]) {
+            this.xp -= level_xp[this.level];
+            this.level++;
+            this.card.querySelector('.player-level').textContent = this.level;  
+        }
     }
-    getHeight() {
-        return this.#height;
+    linkCard(card) {
+        this.card = card;
     }
     
 }
@@ -70,13 +75,14 @@ function createPlayerCard(player) {
     }
 
     console.log("Filling player card for", player.name);
+    player.linkCard(card);
 
     // Set player data
     card.querySelector('.player-name').textContent = player.name;
     card.querySelector('.player-level').textContent = player.level;
     card.querySelector('.player-xp').textContent = `${player.xp} / ${level_xp[player.level]} XP`;
-    card.querySelector('.player-height').textContent = player.getHeight();
-    card.querySelector('.player-initiative').textContent = player.getInitiative();
+    card.querySelector('.player-height').textContent = player.height;
+    card.querySelector('.player-initiative').textContent = player.initiative;
     card.querySelector('.player-health').textContent = player.health;
     card.querySelector('.player-armor').textContent = player.armor;
     card.querySelector('.player-speed').textContent = player.speed;
@@ -126,12 +132,12 @@ function addEventListeners(card, player) {
 
     // xp controls
     card.querySelector('.add-xp').addEventListener('click', () => {
-        player.xp += 10;
+        player.addXP(10);
         card.querySelector('.player-xp').textContent = `${player.xp} / ${level_xp[player.level]} XP`;
     });
     card.querySelector('.add-xp').addEventListener('mousedown', () => {
         IntervalID = setInterval(() => {
-            player.xp += 10;
+            player.addXP(10);
             card.querySelector('.player-xp').textContent =`${player.xp} / ${level_xp[player.level]} XP`;
         }, 100);
     });

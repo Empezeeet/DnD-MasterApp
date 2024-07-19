@@ -1,3 +1,8 @@
+:root {
+    --border-color: rgba( 255, 255, 255, 0.18 );
+}
+
+
 main {
     display: grid;
     grid-template-columns: 20% 40% 40%;
@@ -7,53 +12,52 @@ body, html {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://empezeeet.github.io/DnD-MasterApp/static/background/bg4.jpg");
     background-size:cover;
     color: white;
-}
-:root {
-    --border-color: #aaa;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 
-.option-panel, .character-cards, .monster-cards, #title {
-    display: inline-grid;
+.grid {
+    display: grid;
 }
+
 
 .card-panel {
     display: flex;
     flex-wrap: wrap;
     overflow: auto;
-    height: 95vh;
-    border: 1px solid var(--border-color);
-    border-radius: 1em;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    margin: 0.5em;
+    justify-content: space-evenly;
+    gap: 0.5em;
+    height: 90vh;
 }
 .control-btn {
     width: max-content;
     height: 3em
 }
+
+
+.flex {
+    display: flex;
+}
+.space-evenly {
+    justify-content: space-evenly;
+}
+
+.items-center {
+    justify-items: center;
+}
+
+
+
+.timeBox {
+    margin: 1em;
+    padding: 0.5em;
+}
 .timeBox > p {
     text-align: center;
 }
-.time-control {
-    display: flex;
-    justify-content: space-evenly;
-    justify-items: center;
-}
-.timeBox {
-    border: 1px solid var(--border-color);
-    border-radius: 0.5em;
-    margin: 1em;
-    padding: 0.5em;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
 .turn-panel {
     text-align: center;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--border-color);
-    border-radius: 0.5em;
     margin: 1em;
     padding: 0.5em;
 }
@@ -64,35 +68,25 @@ body, html {
     text-align: center;
 }
 .additional-panel {
-    border: 1px solid var(--border-color);
-    border-radius: 0.5em;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     margin: 1em;
     padding: 0.5em;
-    display: flex;
-    justify-content: space-evenly;
-    justify-items: center;
 }
 
 .saving-panel {
-    display: flex;
-    justify-content: space-between;
-    justify-items: center;
-    border: 1px solid var(--border-color);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 0.5em;
     margin: 1em;
     padding: 0.5em;
 }
 .panel {
-    border: 1px solid var(--border-color);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 0.5em;
     margin: 1em;
     padding: 0.5em;
+    background: rgba( 255, 255, 255, 0.05 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+
 }
       
 
@@ -105,9 +99,7 @@ body, html {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
-.grid-inline {
-    display: grid;
-}
+
 .character-cards {
     position: relative;
 }
@@ -153,6 +145,7 @@ a:any-link {
     -webkit-backdrop-filter: blur(10px);
     top: 0;
     left: 0;
+    overflow: hidden;
     
 }
 #mscreen-close {
@@ -182,3 +175,23 @@ tr, td, th {
 .small-text {
     font-size: small;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 1px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #aaa;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

@@ -21,9 +21,7 @@ class Game {
         this.monsters = monsters;
         this.notes_string = notes;
     }
-    stringify() {
-        return JSON.stringify(this);
-    }
+    
 }
 
 

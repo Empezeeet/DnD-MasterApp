@@ -6,11 +6,9 @@
     <title>D&D DM App</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="player-card.css">
-    <style>
-        body, html {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-    </style>
+ 
+    
+    
     <script src="scripts/clockHandler.js" defer></script>
     <script src="scripts/turnHandler.js" defer></script>
     <script src="scripts/closeWarning.js" defer></script>
@@ -31,7 +29,7 @@
                 <h6>Time Playing: <span id="stopwatch">1h 15mins 50s</span></h6>
                 <p>Day: <span id="dayText">1</span></p>
                 <p>Time: <span id="timeText">12:00</span></p>
-                <div class="time-control">
+                <div class="flex space-evenly items-center">
                     <button class="control-btn" id="minus-hour">-1h</button>
                     <button class="control-btn" id="minus-15minutes">-15min</button>
                     <button class="control-btn" id="plus-15minutes">+15min</button>
@@ -43,12 +41,12 @@
                 <button class="control-btn" id="previousTurn">Previous Turn</button>
                 <button class="control-btn" id="turnButton">Next Turn</button>
             </div>
-            <div class="additional-panel panel">
+            <div class="additional-panel panel flex space-evenly items-center">
                 <button id="toggle-dm-screen" class="control-btn">DM Help</button>
                 <button id="toggle-notes" class="control-btn">Notes</button>
             
             </div>
-            <div class="saving-panel panel">
+            <div class="saving-panel panel flex space-evenly items-center">
                 <button id="save" class="control-btn">Save</button>
                 <button id="load" class="control-btn">Load</button>
                 <button id="add-monster-btn" class="control-btn">+ Monster</button> 
@@ -64,13 +62,13 @@
         <template id="player-card-template">
             <div class="player-card"  data-playerID="null">
                 <link rel="stylesheet" href="player-card.css">
-                <div class="delete-button">X</div>
+                <div class="delete-button">x</div>
                 <p class="player-name">PlayerName</p>
-                <div class="flex">
-                                <button class="add-xp-level">+1LVL</button>
-                                <button class="remove-xp-level">-1LVL</button>
-                                <button class="add-xp">+10XP</button>
-                                <button class="reset-xp">XP 0</button>
+                <div class="flex items-center space-evenly">
+                    <button class="add-xp-level">+1LVL</button>
+                    <button class="remove-xp-level">-1LVL</button>
+                    <button class="add-xp">+10XP</button>
+                    <button class="reset-xp">XP 0</button>
                 </div>
                 <hr>
                 <div class="middle-panel">
@@ -91,43 +89,74 @@
                 </div>
                 
                 <hr>
-                <div class="flex">
+                <div class="flex space-evenly items-center">
                     <div class="modifiable-panel">
-                        <div class="grid-inline modifiable-item">
-                            <div>Health: <span class="player-health">100</span></div>
-                            <button class="add-health" data-playerID="null">+</button>
+                        <div class="modifiable-item">
+                            <div>HP: <span class="player-health">100</span></div>
+                            
                             <button class="remove-health" data-playerID="null">-</button>
+                            <button class="add-health" data-playerID="null">+</button>
                         </div>
-                        <div class="grid-inline modifiable-item">
-                            <div>Armor: <span class="player-armor">100</span></div>
-                            <button class="add-armor" data-playerID="null">+</button>
+                        <div class="modifiable-item">
+                            <div>AC: <span class="player-armor">100</span></div>
+                            
                             <button class="remove-armor" data-playerID="null">-</button>
+                            <button class="add-armor" data-playerID="null">+</button>
                         </div>
                         <div class="grid-inline modifiable-item">
-                            <div>Speed: <span class="player-speed">100</span></div>
-                            <button class="add-speed" data-playerID="null">+</button>
+                            <div>SPD: <span class="player-speed">100</span></div>
+                            
                             <button class="remove-speed" data-playerID="null">-</button>
+                            <button class="add-speed" data-playerID="null">+</button>
                         </div>
                     </div>
                     <hr class="vertical"/>
-                    <div class="coin-panel">
-
-                        <button class="minus-copper">-</button>
-                        <div>C <span class="copper-count">10</span></div>
-                        <button class="plus copper">+</button>
-                        <button class="minus-silver">-</button>
-                        <div>S <span class="silver-count">10</span></div>
-                        <button class="plus silver">+</button>
-                        <button class="minus-electrum">-</button>
-                        <div>E <span class="electrum-count">10</span></div>
-                        <button class="plus electrum">+</button>
-                        <button class="minus gold">-</button>
-                        <div>G <span class="gold-count">10</span></div>
-                        <button class="plus gold">+</button>
-                        <button class="minus platinum">-</button>
-                        <div>P <span class="platinum-count">10</span></div>
-                        <button class="plus platinum">+</button>  
-                        
+                
+                    <div class="modifiable-panel coin-panel">
+                        <div class="modifiable-item">
+                            
+                            
+                            <button class="minus-copper">-</button>
+                            <div>CP <span class="copper-count"></span></div>
+                            <button class="plus copper">+</button>
+                        </div>
+                        <hr>
+                        <div class="modifiable-item">
+                            
+                            
+                            <button class="minus-silver">-</button>
+                            <div>SP <span class="silver-count">10</span></div>
+                            <button class="plus silver">+</button>
+                        </div>
+                        <hr>
+                        <div class="modifiable-item">
+                            
+                            
+                            <button class="minus-electrum">-</button>
+                            <div>EP <span class="electrum-count">10</span></div>
+                            <button class="plus electrum">+</button>
+                        </div>
+                        <hr>
+                        <div class="modifiable-item">
+                            
+                            
+                            <button class="minus gold">-</button>
+                            <div>GP <span class="gold-count">10</span></div>
+                            <button class="plus gold">+</button>
+                        </div>
+                        <hr>
+                        <div class="modifiable-item">
+                           
+                            
+                            <button class="minus platinum">-</button>
+                            <div>PP <span class="platinum-count">10</span></div>
+                            <button class="plus platinum">+</button> 
+                        </div>
+                    
+                    
+                    
+                    
+                      
                     </div>
                 </div>
             </div>
@@ -136,23 +165,20 @@
             <div class="player-card"  data-playerID="null">
                 <link rel="stylesheet" href="player-card.css">
                 <div class="copy-button">Copy</div>
-                <div class="delete-button">X</div>
+                <div class="delete-button">x</div>
                 <p class="player-name">Monster not found</p>
                 <hr>
                 <div class="middle-panel">
                         <div>
-                            <p>Level <span class="player-level">1</span></p>                            
+                            <p>Level <span class="player-level">1</span></p>   
+                            <h6>DC: <span class="monster-dc">Not set</span></h6>                         
                         </div>
                         <hr class="vertical"/>
                         <div>
                             <p>Height <h6><span class="monster-height">Not set </span></h6></p>
                         </div>
                         <hr class="vertical"/>
-                        <div>
-                            <p>DC </p>
-                            <h6><span class="monster-dc">Not set</span></h6>
-                        </div>
-                        <hr class="vertical">
+                
                         <div>
                             <p>Damage</p>
                             <h6><span class="monster-damage">Not set</span></h6>
@@ -160,22 +186,19 @@
                 </div>
                 
                 <hr>
-                <div class="flex">
+                <div class="flex items-center space-evenly">
                     <div class="modifiable-panel">
-                        <div class="grid-inline modifiable-item">
-                            <div>Health <span class="player-health">100</span></div>
-                            <button class="add-health" data-playerID="null">+</button>
+                        <div class="modifiable-item">
+                            <div>HP: <span class="player-health">100</span></div>
+                            
                             <button class="remove-health" data-playerID="null">-</button>
+                            <button class="add-health" data-playerID="null">+</button>
                         </div>
                         <div class="grid-inline modifiable-item">
-                            <div>Armor <span class="player-armor">100</span></div>
-                            <button class="add-armor" data-playerID="null">+</button>
-                            <button class="remove-armor" data-playerID="null">-</button>
-                        </div>
-                        <div class="grid-inline modifiable-item">
-                            <div>Speed <span class="player-speed">100</span></div>
-                            <button class="add-speed" data-playerID="null">+</button>
+                            <div>SPD: <span class="player-speed">100</span></div>
+                            
                             <button class="remove-speed" data-playerID="null">-</button>
+                            <button class="add-speed" data-playerID="null">+</button>
                         </div>
                     </div>
                     
@@ -186,10 +209,10 @@
 
 
 
-        <div class="character-cards card-panel" id="player-cards">
+        <div class="character-cards card-panel panel" id="player-cards">
             
         </div>
-        <div class="monster-cards card-panel" id="monster-cards">
+        <div class="monster-cards card-panel panel" id="monster-cards">
             
         </div>
 
@@ -400,67 +423,68 @@
                     <td>Deception, Intimidation,<br>Performance, Persuasion</td>
                     </tr>
                 </tbody>
-                </table>      
-        </div>
-        <br>
-        <div class="mscreen-tables">
+                </table>  
             <table class="small-text">
                 <thead>
-                  <tr>
+                    <tr>
                     <th colspan="6">Exchange Rates</th>
-                  </tr>
-                  <tr>
+                    </tr>
+                    <tr>
                     <th>Coin</th>
                     <th>cp</th>
                     <th>sp</th>
                     <th>ep</th>
                     <th>gp</th>
                     <th>pp</th>
-                  </tr>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                    <tr>
                     <td>Copper (cp)</td>
                     <td>1</td>
                     <td>1/10</td>
                     <td>1/50</td>
                     <td>1/100</td>
                     <td>1/1000</td>
-                  </tr>
-                  <tr>
+                    </tr>
+                    <tr>
                     <td>Silver (sp)</td>
                     <td>10</td>
                     <td>1</td>
                     <td>1/5</td>
                     <td>1/10</td>
                     <td>1/100</td>
-                  </tr>
-                  <tr>
+                    </tr>
+                    <tr>
                     <td>Electrum (ep)</td>
                     <td>50</td>
                     <td>5</td>
                     <td>1</td>
                     <td>1/2</td>
                     <td>1/20</td>
-                  </tr>
-                  <tr>
+                    </tr>
+                    <tr>
                     <td>Gold (gp)</td>
                     <td>100</td>
                     <td>10</td>
                     <td>2</td>
                     <td>1</td>
                     <td>1/10</td>
-                  </tr>
-                  <tr>
+                    </tr>
+                    <tr>
                     <td>Platinum (pp)</td>
                     <td>1,000</td>
                     <td>100</td>
                     <td>20</td>
                     <td>10</td>
                     <td>1</td>
-                  </tr>
+                    </tr>
                 </tbody>
-              </table>
+                </table>    
+        </div>
+        <br>
+        <div class="mscreen-tables">
+            
             <table class="small-text">
             <thead>
                 <tr>
@@ -496,35 +520,45 @@
                 <td>Invisible</td>
                 <td>Advantage on your attacks. Attacks against you have disadvantage.</td>
                 </tr>
-                <tr>
-                <td>Paralyzed</td>
-                <td>Incapacitated, can't move or speak. Fail STR and DEX saves.<br> Attacks at you have advantage and critical if within 5 feet.</td>
-                </tr>
-                <tr>
-                <td>Petrified</td>
-                <td>Incapacitated, can't move or speak, unaware. Fail STR and DEX saves. <br>Attacks against you have advantage. <br>Resist all damage. Immune to poison and disease.</td>
-                </tr>
-                <tr>
-                <td>Poisoned</td>
-                <td>Disadvantage on attacks and ability checks.</td>
-                </tr>
-                <tr>
-                <td>Prone</td>
-                <td>May crawl or stand. Disadvantage on your attack rolls. <br>Attacks against you within 5 feet have an advantage.</td>
-                </tr>
-                <tr>
-                <td>Restrained</td>
-                <td>Speed is 0. Attacks and DEX saves have disadvantage. Attacks against you have an advantage.</td>
-                </tr>
-                <tr>
-                <td>Stunned</td>
-                <td>No actions or moves. Fail STR and DEX saves. Attacks at you have advantage.</td>
-                </tr>
-                <tr>
-                <td>Unconscious</td>
-                <td>Incapacitated, can't move or speak, unaware. <br>Drop anything held. Fall prone. Fail STR and DEX saves. <br>Attacks against you have advantage and critical if within 5 feet.</td>
-                </tr>
+                
             </tbody>
+            </table>
+            <table class="small-text">
+                <thead>
+                    <tr>
+                    <th colspan="2">Conditions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Paralyzed</td>
+                        <td>Incapacitated, can't move or speak. Fail STR and DEX saves.<br> Attacks at you have advantage and critical if within 5 feet.</td>
+                        </tr>
+                        <tr>
+                        <td>Petrified</td>
+                        <td>Incapacitated, can't move or speak, unaware. Fail STR and DEX saves. <br>Attacks against you have advantage. <br>Resist all damage. Immune to poison and disease.</td>
+                        </tr>
+                        <tr>
+                        <td>Poisoned</td>
+                        <td>Disadvantage on attacks and ability checks.</td>
+                        </tr>
+                        <tr>
+                        <td>Prone</td>
+                        <td>May crawl or stand. Disadvantage on your attack rolls. <br>Attacks against you within 5 feet have an advantage.</td>
+                        </tr>
+                        <tr>
+                        <td>Restrained</td>
+                        <td>Speed is 0. Attacks and DEX saves have disadvantage. <br>Attacks against you have an advantage.</td>
+                        </tr>
+                        <tr>
+                        <td>Stunned</td>
+                        <td>No actions or moves. Fail STR and DEX saves. <br>Attacks at you have advantage.</td>
+                        </tr>
+                        <tr>
+                        <td>Unconscious</td>
+                        <td>Incapacitated, can't move or speak, unaware. <br>Drop anything held. Fall prone. Fail STR and DEX saves. <br>Attacks against you have advantage and critical if within 5 feet.</td>
+                        </tr>
+                </tbody>
             </table>
               
         </div>
