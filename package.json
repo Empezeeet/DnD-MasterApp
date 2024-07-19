@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@swc/cli": "^0.4.0",
+    "@swc/core": "^1.7.0",
+    "raw-loader": "^4.0.2",
+    "typescript": "^5.5.3"
+  }
+}

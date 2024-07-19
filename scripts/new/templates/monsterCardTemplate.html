@@ -1,0 +1,41 @@
+<template id="monster-card-template">
+    <div class="monster-card">
+        <link rel="stylesheet" href="player-card.css">
+        <div class="copy-button">Copy</div>
+        <div class="delete-button">x</div>
+        <p class="monster-id">Monster not found</p>
+
+        <hr>
+        
+        <div class="middle-panel">
+                <div>
+                    <p>Level <span class="monster-level">1</span></p>   
+                    <h6>DC: <span class="monster-dc">Not set</span></h6>                         
+                </div>
+                <hr class="vertical"/>
+                <div>
+                    <p>Height <h6><span class="monster-height">Not set </span></h6></p>
+                    <p>Damage <h6><span class="monster-damage">Not set</span></h6></p>
+                </div>
+        </div>
+        
+        <hr>
+
+        <div class="flex items-center space-evenly">
+            <div class="modifiable-panel">
+                <div class="modifiable-item">
+                    <div>HP: <span class="monster-health">100</span></div>
+                    
+                    <button class="remove-health">-</button>
+                    <button class="add-health">+</button>
+                </div>
+                <div class="grid-inline modifiable-item">
+                    <div>SPD: <span class="monster-speed">100</span></div>
+                    
+                    <button class="remove-speed">-</button>
+                    <button class="add-speed">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
