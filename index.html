@@ -59,6 +59,38 @@
                 <div>D&D Dungeon Master App V1.5</div>
             </div>
         </div>
+        <template id="player-card-template">
+            <div class="player-card">
+                <link rel="stylesheet" href="player-card.css"/>
+                <div class="delete-button">x</div>
+                <p class="name">PlayerName</p>
+                <div class="flex items-center space-evenly">
+                    <button class="add-xp-level">+1LVL</button>
+                    <button class="remove-xp-level">-1LVL</button>
+                    <button class="add-xp">+10XP</button>
+                    <button class="reset-xp">XP 0</button>
+                </div>
+                <hr>
+                <div class="middle-panel">
+                    <div>
+                        <p>Level: <span class="level">1</span></p>
+                        <h6>XP: <span class="xp">1</span></h6>
+                    </div>
+                    <hr class="vertical"/>
+                    <div>
+                        <p>Height: <h6><span class="player-height">Not Set</span></h6></p>
+                        <p>Weight: <h6><span class="player-weight">Not set</span>"</h6></p>
+                    </div>
+                    <hr class="vertical"/>
+                    <div>
+                        <p>Initiative: <h6><span class="player-initiative">Not Set</span></h6></p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </template>
+
+
         <!--<template id="player-card-template">
             <div class="player-card"  data-playerID="null">
                 <link rel="stylesheet" href="player-card.css">
