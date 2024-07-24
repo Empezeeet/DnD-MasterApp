@@ -13,6 +13,7 @@ body, html {
     background-size:cover;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+    position: relative;
 
 }
 
@@ -30,10 +31,54 @@ body, html {
     gap: 0.5em;
     height: 90vh;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 .control-btn {
     width: max-content;
-    height: 3em
+    height: 3em;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 0.2em;
+    position: relative;
+    border: 1px solid var(--border-color);
+    box-shadow: 2px 2px 5px 0 rgba( 255, 255, 255, 0.5 ) inset;
 }
+.control-btn:active {
+    box-shadow: 2px 2px 5px 0 rgba( 255, 255, 255, 0.5 );
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .flex {
@@ -195,3 +240,37 @@ tr, td, th {
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+.notification {
+    position: absolute;
+    display: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 25%;
+    height: 25%;
+    border-radius: 1em;
+    border: 1px solid var(--border-color);
+    -webkit-box-shadow: 0px 8px 100px 27px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 8px 100px 27px rgba(66, 68, 90, 1);
+    box-shadow: 0px 8px 100px 27px rgba(66, 68, 90, 1);    
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 10;
+}
+.notification-title, .notification-text {
+    text-align: center;
+}
+.notification-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.3em;
+    background: none;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-right: none;
+    cursor: pointer;
+    color: lightcoral;
+}
