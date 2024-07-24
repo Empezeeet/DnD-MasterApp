@@ -10,8 +10,15 @@ Functions:
   - Session time (time playing)
   - Notes for DM
   - General support in DM Screen. Examples: Conditions, Spell Magic Ability.
-  - Conditions on players (COMING SOON) 
+  
 
+Coming Soon:
+  - Conditions on players (effects)
+  - Character Generation (External Tool)
+  - Tracking for players' items that can be used (like arrows)
+  - Spell Tracking.
+  - Map Support
+  - Rewrite of Player Cards on UI
 
 
 
