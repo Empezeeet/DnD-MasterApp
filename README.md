@@ -1,7 +1,7 @@
 # Digital Help for D&D's Dungeon Master
 Works as Master's Screen and help for Dugeon Master
-
-Functions:
+***
+### Functions:
   - Tracking Players' XP, Level, Weight, HP, AC, Speed, Coins, Height, Initiative.
   - Tracking Monsters' HP, DC, Speed, Height
   - Turn count
@@ -10,18 +10,16 @@ Functions:
   - Session time (time playing)
   - Notes for DM
   - General support in DM Screen. Examples: Conditions, Spell Magic Ability.
-  
+## Coming Soon
 
-Coming Soon:
-  - Conditions on players (effects)
-  - Character Generation (External Tool)
-  - Tracking for players' items that can be used (like arrows)
-  - Spell Tracking.
-  - Map Support
-  - Rewrite of Player Cards on UI
-
-
-
+| Function    | Priority |
+| -------- | ------- |
+| Rewrite of Player Cards on UI | Highest |
+| Conditions on players (effects)  | High |
+| Tracking for players' items that can be used (like arrows) | High |
+| Spell Tracking | High |
+| Map Support | Medium |
+| Character Generation (External Tool) | Low |
 
 
 
@@ -30,8 +28,12 @@ Coming Soon:
 
 
 
-Version Naming: 
- - LG -> Legacy (first ever written version)
+
+
+
+## Version Naming: 
+#### One of these abbreviations you can see in bottom left corner of app:
+ - LG -> Legacy (first ever written version, not available now)
  - [Current Version] VJS -> Vanilla JS (first rewrite of app in VanillaJS) 
  - NTS -> Typescript Next.JS (second rewrite coming soon)
 
