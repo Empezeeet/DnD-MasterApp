@@ -25,6 +25,6 @@ Functions:
 
 Version Naming: 
  - LG -> Legacy (first ever written version)
- - VJS -> Vanilla JS (first rewrite of app in VanillaJS)
+ - [Current Version] VJS -> Vanilla JS (first rewrite of app in VanillaJS) 
  - NTS -> Typescript Next.JS (second rewrite coming soon)
 
