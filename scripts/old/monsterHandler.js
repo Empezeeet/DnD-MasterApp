@@ -1,5 +1,3 @@
-
-
 class Monster {
     constructor(id, hp, height, speed, damage, dc, lvl) {
         this.id = id;
